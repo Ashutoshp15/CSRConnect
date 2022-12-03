@@ -19,21 +19,20 @@ function getTopCharities(name, cos_sim, top = 5) {
     return similarity_scores.sort((a, b) => b[1] - a[1]).slice(0, top)
 }
 
-export function getRecommendations(charity_list) {
-    const recommendations = charity_list.map(
-        (res) => getTopCharities(res.charity_name, sim).map(
+export function getRecommendations(charity_list_names) {
+    const recommendations = charity_list_names.map(
+        (res) => getTopCharities(res, sim).map(
             (scores) => scores[0]
         )
     )
     const flattenedRecs = recommendations.flat()
     const filteredRecs = flattenedRecs.filter((item, i) => flattenedRecs.indexOf(item) === i)
     return filteredRecs.map(
-        (index) => JSON.parse(JSON.stringify({ "index": index, "name": corpus.getDocumentIdentifiers()[index] }))
+        (index) => corpus.getDocumentIdentifiers()[index]
     )
 }
 
-///* testing
-const charities = charity_names.map((res) => JSON.parse(JSON.stringify({"charity_name": res})))
-console.log(charities)
-console.log(getRecommendations(charities))
-//*/
+// // testing
+// const charities = charity_names.map((res) => JSON.parse(JSON.stringify({"charity_name": res})))
+// console.log(charities)
+// console.log(getRecommendations(charities))

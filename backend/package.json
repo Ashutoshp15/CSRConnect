@@ -1,6 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "tiny-tfidf": "^0.9.1"
-  }
-}
