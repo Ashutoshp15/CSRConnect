@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeLoginComponent } from './home_login/home_login.component';
-
+import { RegisterHomeComponent } from './register_home/register_home.component';
 import { FullComponent } from './layouts/full/full.component';
 
 
@@ -31,6 +31,10 @@ export const Approutes: Routes = [
       
     ],
   },
+ { path:'register',
+  component:RegisterHomeComponent
+},
+
   {
     path: 'login',
    component:HomeLoginComponent

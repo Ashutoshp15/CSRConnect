@@ -15,9 +15,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FullComponent } from './layouts/full/full.component';
-// import {CompanyFullComponent} from './company_full/company_full.component';
+ import {RegisterHomeComponent} from './register_home/register_home.component';
 import { HomeLoginComponent } from './home_login/home_login.component';
-
+//import { NavigationComponent } from './shared/header/navigation.component';
+//import { CompanyFullComponent } from './company_full/company_full.component';
 import { NavigationComponent } from './shared/header/navigation.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
@@ -28,6 +29,7 @@ import { SpinnerComponent } from './shared/spinner.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -44,7 +46,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavigationComponent,
     SidebarComponent,
     HomeLoginComponent,
-    // CompanyFullComponent,
+    RegisterHomeComponent,
   ],
 
   imports: [

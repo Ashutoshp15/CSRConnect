@@ -1,4 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { ApiService } from '../api.service';
 //declare var require: any;
 
 @Component({
@@ -6,9 +7,11 @@ import { Component, AfterViewInit } from '@angular/core';
 })
 export class DashboardComponent implements AfterViewInit {
   subtitle: string;
-  constructor() {
+  constructor(public apiservice:ApiService) {
     this.subtitle = 'This is some text within a card block.';
   }
 
-  ngAfterViewInit() { }
+  ngAfterViewInit() { 
+    this.apiservice.sendSuccessMsg("charity");
+  }
 }
