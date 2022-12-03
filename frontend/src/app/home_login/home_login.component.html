@@ -13,7 +13,8 @@
             <input class="input-group" matInput placeholder="Enter your password" value="" name="password" type="password" [(ngModel)]= "password" required>
             </mat-form-field>
             <span></span>
-            <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+            <button mat-raised-button color="primary" style="margin-right: 40px;" (click)="submit()">Login</button>
+            <button mat-raised-button color="primary"  style="margin-right: 40px;" (click)="register()">Register</button>
             <span *ngIf="show"> <button mat-button color="accent">Login success !!</button></span>
             </form>
             </div>

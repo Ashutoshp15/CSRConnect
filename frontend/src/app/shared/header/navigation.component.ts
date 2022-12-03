@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { ApiService } from './../../api.service';
 
 declare var $: any;
 
@@ -11,14 +12,16 @@ declare var $: any;
 })
 export class NavigationComponent implements AfterViewInit {
   @Output() toggleSidebar = new EventEmitter<void>();
-
   public config: PerfectScrollbarConfigInterface = {};
 
   public showSearch = false;
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal,public appService:ApiService) {
+    
   }
-
+     catg:string="";
+     showCatg:boolean=true;
+     showcom:boolean=true;
   // This is for Notifications
   notifications: Object[] = [
     {
@@ -112,5 +115,33 @@ export class NavigationComponent implements AfterViewInit {
     icon: 'de'
   }]
 
-  ngAfterViewInit() { }
+  ngOnInit(){
+   this.appService.StageMessage.subscribe(msg => this.catg = msg); 
+    if(this.catg=='charity'){
+      console.log("charity",this.catg);
+      this.showCatg=true;
+      this.showcom=false;
+    }
+    else
+   if(this.catg=='company'){
+      console.log("company",this.catg);
+      this.showCatg=false;
+      this.showcom=true;
+    }
+   }
+   ngAfterViewInit(): void {
+    this.appService.StageMessage.subscribe(msg => this.catg = msg); 
+    if(this.catg=='charity'){
+      console.log("charity",this.catg);
+      this.showCatg=true;
+      this.showcom=false;
+    }
+    else
+   if(this.catg=='company'){
+      console.log("company",this.catg);
+      this.showCatg=false;
+      this.showcom=true;
+    }
+     
+   }
 }
