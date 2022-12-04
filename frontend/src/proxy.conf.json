@@ -1,7 +1,9 @@
 {
     "/api/*": {
-        "target": "https://app.swaggerhub.com/apis/VATSALPRAFULBHAIBHAN/CSRConnect/1.0.0#/default",
+     
+       "target":"http://CSRConnect-LB-1311897954.us-east-1.elb.amazonaws.com/csrconnect",
         "secure": false,
-        "logLevel": "debug"
+        "logLevel": "debug",
+        "pathRewrite":{"^/api":""}
     }
 }

@@ -1,20 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { Feeds,Feed } from './feeds-data';
-
+import { Feed } from './feeds-data';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Component({
   selector: 'app-feeds',
   templateUrl: './feeds.component.html'
 })
 export class FeedsComponent implements OnInit {
 
-  feeds:Feed[];
+  feeds:any[]=[];
+  charitycatg:string[]=[];
+  constructor(public http:HttpClient) {
 
-  constructor() {
-
-    this.feeds = Feeds;
+ 
   }
 
   ngOnInit(): void {
-  }
+    let headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Methods": "*" ,
+       "Access-Control-Allow-Headers":"Content-Type, Accept,Origin, X-Requested-With",
+       "access-control-allow-credentials":" true" 
+    });
+    this.http
+      .get<any>('/api/business/donatedCharities/Infosys/top', {
+        headers: headers
+      })
+      .subscribe(data => {
+        var tmp=JSON.stringify(data);
+       this.feeds=JSON.parse(tmp);
+   
+      });
 
+    }
 }

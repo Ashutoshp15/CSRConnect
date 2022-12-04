@@ -8,12 +8,15 @@ import {blogcard,blogcards} from './blog-cards-data';
 export class BlogCardsComponent implements OnInit {
 
   blogcards:blogcard[];
+  val:string='';
 
   constructor() { 
 
     this.blogcards=blogcards;
   }
+redirect(){
 
+}
   ngOnInit(): void {
   }
 

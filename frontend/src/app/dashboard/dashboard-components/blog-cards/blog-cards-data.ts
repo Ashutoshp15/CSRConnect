@@ -8,28 +8,28 @@ export interface blogcard {
 export const blogcards: blogcard[] = [
 
     {
-        title: 'This is simple blog',
-        subtitle: '2 comments, 1 Like',
-        subtext: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'assets/images/bg/bg1.jpg'
+        title: 'MLK DAY',
+        subtitle: '400 Contributions',
+        subtext: 'Campaign Promoting Equal Rights to all irrespective of Race,Color,Ethnicity.',
+        image: 'assets/images/bg/mlk.jpg'
     },
     {
-        title: 'This is simple blog',
-        subtitle: '2 comments, 1 Like',
-        subtext: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'assets/images/bg/bg2.jpg'
+        title: 'Pakistan Floods 2022',
+        subtitle: ' 1077 Contributions',
+        subtext: 'Undergoing Campaign to support victims affected by Pakistan Flood 2022.',
+        image: 'assets/images/bg/flood.webp'
     },
     {
-        title: 'This is simple blog',
-        subtitle: '2 comments, 1 Like',
-        subtext: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'assets/images/bg/bg3.jpg'
+        title: "Season Of Giving",
+        subtitle: '3696 Contributions',
+        subtext: 'For provide food,shelther this holiday sesion to Homeless people in our Neighborhood.',
+        image: 'assets/images/bg/thanks.jpeg'
     },
     {
-        title: 'This is simple blog',
-        subtitle: '2 comments, 1 Like',
-        subtext: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'assets/images/bg/bg4.jpg'
+        title: 'Hispanic Heritage Month',
+        subtitle: '687 Contributions',
+        subtext: 'To celebrate the various contributions of Hispanic and Latino Community.',
+        image: 'assets/images/bg/hispanic.jpg'
     },
 
 ] 

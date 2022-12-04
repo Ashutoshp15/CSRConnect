@@ -4,9 +4,9 @@ import { RouteInfo } from './sidebar.metadata';
 import { ROUTES } from './menu-items';
 
 
-@Injectable({
-    providedIn: 'root'
-})
+// @Injectable({
+//     providedIn: 'root'
+// })
 export class VerticalSidebarService {
 
     public screenWidth: any;
