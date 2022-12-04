@@ -9,10 +9,11 @@
 }
 //aboutimage
 .abimg {
-  background: url('/./assets/images/bg/loginpage.jpg') no-repeat center center;
- height: 650px;width: 1440px;
- object-fit: cover;
- //background-size:contain;
+  // background: url('/./assets/images/bg/loginpage.jpg') no-repeat center center;
+ height: 400px;
+  width: 1440px;
+ //object-fit: cover;
+ background-size:cover;
 }
 // 
 // button

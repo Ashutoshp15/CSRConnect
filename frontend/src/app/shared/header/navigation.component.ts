@@ -22,7 +22,42 @@ export class NavigationComponent implements AfterViewInit {
      catg:string="";
      showCatg:boolean=true;
      showcom:boolean=true;
-  // This is for Notifications
+     username:string="Smile Foundation";
+    // username:string="Infosys"
+  
+  ngOnInit(){
+    //this.appService.userMessage.subscribe(user => this.username = user);
+    console.log("user",this.username);
+    this.appService.sendLoginsuccess(this.username);
+   this.appService.StageMessage.subscribe(msg => this.catg = msg); 
+    if(this.catg=='charity'||this.username=="Smile Foundation"){
+      console.log("charity",this.catg);
+      this.showCatg=true;
+      this.showcom=false;
+    }
+    else
+   if(this.catg=='company'||this.username=="Infosys"){
+      console.log("company",this.catg);
+      this.showCatg=false;
+      this.showcom=true;
+    }
+   }
+   ngAfterViewInit(): void {
+    this.appService.StageMessage.subscribe(msg => this.catg = msg); 
+    if(this.catg=='charity'){
+      console.log("charity",this.catg);
+      this.showCatg=true;
+      this.showcom=false;
+    }
+    else
+   if(this.catg=='company'){
+      console.log("company",this.catg);
+      this.showCatg=false;
+      this.showcom=true;
+    }
+     
+   }
+   // This is for Notifications
   notifications: Object[] = [
     {
       btn: 'btn-danger',
@@ -115,33 +150,5 @@ export class NavigationComponent implements AfterViewInit {
     icon: 'de'
   }]
 
-  ngOnInit(){
-   this.appService.StageMessage.subscribe(msg => this.catg = msg); 
-    if(this.catg=='charity'){
-      console.log("charity",this.catg);
-      this.showCatg=true;
-      this.showcom=false;
-    }
-    else
-   if(this.catg=='company'){
-      console.log("company",this.catg);
-      this.showCatg=false;
-      this.showcom=true;
-    }
-   }
-   ngAfterViewInit(): void {
-    this.appService.StageMessage.subscribe(msg => this.catg = msg); 
-    if(this.catg=='charity'){
-      console.log("charity",this.catg);
-      this.showCatg=true;
-      this.showcom=false;
-    }
-    else
-   if(this.catg=='company'){
-      console.log("company",this.catg);
-      this.showCatg=false;
-      this.showcom=true;
-    }
-     
-   }
 }
+
