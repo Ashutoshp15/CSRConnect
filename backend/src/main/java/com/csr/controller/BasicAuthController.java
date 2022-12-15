@@ -49,7 +49,7 @@ public class BasicAuthController {
     }
 
     @PostMapping("/login")
-    public String login(@Valid @RequestBody final LoginRequest loginRequest) throws Exception {
+    public List<String> login(@Valid @RequestBody final LoginRequest loginRequest) throws Exception {
       try {
         authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(
@@ -62,7 +62,10 @@ public class BasicAuthController {
 
       final String jwt = jwtUtil.generateToken(loggedInUser);
       new LoginResponse(jwt);
-      return loggedInUser.getOrgName();
+      List<String> list = new ArrayList<String>();
+      list.add(loggedInUser.getRole()); 
+      list.add(loggedInUser.getOrgName());
+      return list;
     }
 
     @PostMapping("/signup")
